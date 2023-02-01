@@ -1,7 +1,11 @@
 package my.service;
 
 import entity.auto.Auto;
+import entity.auto.AutoBrand;
+import entity.auto.AutoModel;
 import my.config.RootConfig;
+import my.service.auto.AutoBrandService;
+import my.service.auto.AutoModelService;
 import my.service.auto.AutoService;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -17,19 +21,32 @@ public class AutoServiceTest {
 
     @Autowired
     private AutoService autoService;
+    @Autowired
+    private AutoBrandService autoBrandService;
+    @Autowired
+    private AutoModelService autoModelService;
 
     @Ignore
     @Test
     public void addTest() {
 
-        Auto auto = new Auto(1, "Tesla X", "Red", 2020, 75.0);
+        AutoBrand bmw = new AutoBrand(1, "BMW");
+        AutoBrand autoBrand = autoBrandService.addAutoBrand(bmw);
+
+        AutoModel x5 = new AutoModel(1, "X5", autoBrand);
+        AutoModel autoModel = autoModelService.addAutoModel(x5);
+
+        Auto auto = new Auto(1, "red", "m", 2020, 120.02, autoModel);
 
         autoService.addAuto(auto);
 
     }
 
+    @Ignore
     @Test
     public void deleteTest() {
         autoService.deleteAuto(1);
+        autoModelService.deleteAutoModel(1);
+        autoBrandService.deleteAutoBrand(1);
     }
 }

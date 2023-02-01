@@ -8,7 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 
 @Getter
 @Setter
@@ -18,16 +18,8 @@ import java.math.BigDecimal;
 @Table(name = "auto")
 public class Auto implements Serializable {
 
-    public Auto(Integer id, String model_auto, String colour_auto, Integer year_auto, Double price_auto) {
-        this.id = id;
-        this.model_auto = model_auto;
-        this.colour_auto = colour_auto;
-        this.year_auto = year_auto;
-        this.price_auto = price_auto;
-    }
-
     @Id
-    @Column(name = "auto_id")
+    @Column(name = "id")
     @GeneratedValue(generator = "increment")
     @GenericGenerator(
             name = "increment",
@@ -35,24 +27,32 @@ public class Auto implements Serializable {
     )
     private Integer id;
 
-    @Column(name = "model_auto")
-    private String model_auto;
-
-    @Column(name = "auto_picture")
-    @Lob
-    private byte[] picture;
 
     @Column(name = "colour_auto")
-    private String colour_auto;
+    private String colourAuto;
 
     @Column(name = "trancemission_auto")
-    private String trancemission_auto;
+    private String trancemissionAuto;
 
     @Column(name = "year_auto")
-    private Integer year_auto;
+    private Integer yearAuto;
 
-    @Column(name = "price_auto")
-    private Double price_auto;
+    @Column(name = "priceAuto")
+    private Double priceAuto;
 
+    @ManyToOne
+    @JoinColumn(name = "model_id")
+    private AutoModel autoModel;
 
+    @OneToOne(mappedBy = "auto", cascade = CascadeType.ALL)
+    private AutoPicture autoPicture;
+
+    public Auto(Integer id, String colourAuto, String trancemissionAuto, Integer yearAuto, Double priceAuto, AutoModel autoModel) {
+        this.id = id;
+        this.colourAuto = colourAuto;
+        this.trancemissionAuto = trancemissionAuto;
+        this.yearAuto = yearAuto;
+        this.priceAuto = priceAuto;
+        this.autoModel = autoModel;
+    }
 }

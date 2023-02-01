@@ -1,7 +1,7 @@
 package my.service.auto;
 
 import entity.auto.Auto;
-import my.dao.AutoDao;
+import my.repository.AutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,17 +11,17 @@ import org.springframework.transaction.annotation.Transactional;
 public class AutoService {
 
     @Autowired
-    private AutoDao autoDao;
+    private AutoRepository autoRepository;
 
 
     public Auto addAuto(Auto auto) {
 
-        return autoDao.createAuto(auto);
+        return autoRepository.save(auto);
     }
 
     public void deleteAuto(Integer id) {
 
-       autoDao.deleteAuto(id);
+       autoRepository.deleteById(id);
     }
 
 }
