@@ -1,6 +1,6 @@
 package entity.car_orders;
 
-import entity.app_users.AppUsers;
+import entity.app_users.AppUser;
 import entity.auto.Auto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,7 +19,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Table(name = "carorders")
-public class CarOrders implements Serializable {
+public class CarOrder implements Serializable {
 
     @Id
     @Column(name = "order_id")
@@ -28,15 +28,15 @@ public class CarOrders implements Serializable {
             name = "increment",
             strategy = "org.hibernate.id.IncrementGenerator"
     )
-    private Integer order_id;
+    private Integer orderId;
 
     @ManyToOne
     @JoinColumn(name = "user_order_id")
-    private AppUsers user_order_id;
+    private AppUser userOrderId;
 
     @ManyToOne
     @JoinColumn(name = "auto_order_id")
-    private Auto auto_order_id;
+    private Auto autoOrderId;
 
     @Column
     private LocalDate dateStart;
@@ -44,15 +44,15 @@ public class CarOrders implements Serializable {
     @Column
     private LocalDate dateFinish;
 
-    @Column
+    @Column(name = "amount_of_days")
     private Integer amountOfDays;
 
     @Override
     public String toString() {
-        return "Order{" +
-                "order_id=" + order_id +
-                ", userOrder=" + user_order_id +
-                ", autoOrder=" + auto_order_id +
+        return "CarOrder{" +
+                "orderId=" + orderId +
+                ", userOrderId=" + userOrderId +
+                ", autoOrderId=" + autoOrderId +
                 ", dateStart=" + dateStart +
                 ", dateFinish=" + dateFinish +
                 ", amountOfDays=" + amountOfDays +

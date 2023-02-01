@@ -14,16 +14,17 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "appusers")
-public class AppUsers implements Serializable {
+@Table(name = "appuser")
+public class AppUser implements Serializable {
 
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
 
-    @Column(name = "role_name")
-    private String roleName;
+    @OneToOne(mappedBy = "appUser", cascade = CascadeType.ALL)
+    private AppUserRole appUserRole;
+
 
     private String email;
 
@@ -53,4 +54,9 @@ public class AppUsers implements Serializable {
                 '}';
     }
 
+    public AppUser(Integer userId, AppUserRole appUserRole, String firstName) {
+        this.userId = userId;
+        this.appUserRole = appUserRole;
+        this.firstName = firstName;
+    }
 }
