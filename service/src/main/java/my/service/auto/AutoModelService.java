@@ -25,4 +25,9 @@ public class AutoModelService {
 
         autoModelRepository.deleteById(id);
     }
+
+    public AutoModel findByNameModel(String nameModel){
+
+        return autoModelRepository.findAutoModelByModel(nameModel);
+    }
 }

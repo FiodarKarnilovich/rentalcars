@@ -1,6 +1,5 @@
 package my.service.order;
 
-import entity.app_users.AppUser;
 import entity.car_orders.CarOrder;
 import my.repository.CarOrderRepository;
 import my.service.auto.AutoService;

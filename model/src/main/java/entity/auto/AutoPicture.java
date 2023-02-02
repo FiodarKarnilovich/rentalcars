@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "auto_picture")
 public class AutoPicture {
@@ -34,4 +33,9 @@ public class AutoPicture {
     @PrimaryKeyJoinColumn
     private Auto auto;
 
+    public AutoPicture(Integer id, byte[] picture, Auto auto) {
+        this.id = id;
+        this.picture = picture;
+        this.auto = auto;
+    }
 }

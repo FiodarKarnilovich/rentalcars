@@ -23,4 +23,11 @@ public class AutoBrandService {
 
         autoBrandRepository.deleteById(id);
     }
+
+    public AutoBrand findByNameBrand(String nameBrand) {
+
+        return autoBrandRepository.findAutoBrandByBrand(nameBrand) ;
+    }
+
+
 }
