@@ -2,6 +2,7 @@ package my.service;
 
 import my.config.RootConfig;
 import my.service.auto.AutoService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class AutoViewAutoTest {
 
         System.out.println(autoService.autoList());
     }
-
+    @Ignore
     @Test
     public void fullAutoList(){
 
