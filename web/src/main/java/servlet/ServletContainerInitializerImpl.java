@@ -14,8 +14,12 @@ import java.util.Set;
 @Component
 public class ServletContainerInitializerImpl implements ServletContainerInitializer {
 
+
+
     @Override
     public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
+        System.out.println("ServletContainer is running");
+
         AnnotationConfigWebApplicationContext context =
                 new AnnotationConfigWebApplicationContext();
         context.register(RootConfig.class);
@@ -27,7 +31,7 @@ public class ServletContainerInitializerImpl implements ServletContainerInitiali
         final ServletRegistration.Dynamic servletRegistration =
                 ctx.addServlet("dispatcherServlet", dispatcherServlet);
         servletRegistration.setLoadOnStartup(1);
-        //servletRegistration.addMapping("/");
+        servletRegistration.addMapping("/");
         servletRegistration.addMapping("/index.html");
         servletRegistration.addMapping("*.html");
         servletRegistration.addMapping("*.action");
