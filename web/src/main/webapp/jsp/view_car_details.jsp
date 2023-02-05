@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <title>Show list cars</title>
+    <title>View Car Details</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -27,12 +27,17 @@
     </ul>
 </header>
 
+
+<img src="img/home-img.jpg)" class="rounded mx-auto d-block" alt="picture car">
+
 <table class="table">
     <thead>
     <tr>
         <th scope="col">Brand</th>
         <th scope="col">Model</th>
         <th scope="col">Color</th>
+        <th scope="col">Trancemission</th>
+        <th scope="col">Year</th>
         <th scope="col">Price</th>
     </tr>
     </thead>
@@ -41,41 +46,17 @@
         <td>BMW</td>
         <td>X6</td>
         <td>red</td>
+        <td>A</td>
+        <td>2020</td>
         <td>100.0</td>
-    </tr>
-    <tr>
-        <td>Mercedes</td>
-        <td>S class</td>
-        <td>black</td>
-        <td>150.0</td>
     </tr>
 
     </tbody>
 </table>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<button type="button" class="btn btn-primary btn-lg">Добавить машину</button>
-
-
+<button type="button" class="btn btn-primary btn-lg">Сделать заказ</button>
+<button type="button" class="btn btn-primary btn-lg">Редактировать цену</button>
+<button type="button" class="btn btn-primary btn-lg">Удалить машину</button>
 
 <footer style="position:absolute; left: 0; bottom: 0">
     проект Корниловича ФФ

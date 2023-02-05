@@ -1,9 +1,7 @@
 package servlet;
 
-import controllers.WebConfiguration;
+
 import my.config.RootConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;

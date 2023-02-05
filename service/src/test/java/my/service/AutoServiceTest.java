@@ -26,7 +26,7 @@ public class AutoServiceTest {
     @Autowired
     private AutoModelService autoModelService;
 
-    @Ignore
+
     @Test
     public void addTest() {
 
@@ -42,7 +42,7 @@ public class AutoServiceTest {
 
     }
 
-    @Ignore
+
     @Test
     public void deleteTest() {
         autoService.deleteAuto(1);
