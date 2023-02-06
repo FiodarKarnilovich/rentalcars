@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
 
 <form>
@@ -41,7 +42,7 @@
 
 
     <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Регистрация</button>
+    <button type="submit"  class="btn btn-primary btn-block mb-4">Регистрация</button>
 
 
 </form>
