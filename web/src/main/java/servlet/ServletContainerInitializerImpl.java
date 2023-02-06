@@ -2,6 +2,7 @@ package servlet;
 
 
 import my.config.RootConfig;
+import my.service.ServiceContextConfig;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
