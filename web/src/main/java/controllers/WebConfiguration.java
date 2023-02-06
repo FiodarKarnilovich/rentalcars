@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
@@ -14,6 +15,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class WebConfiguration {
 
 
+    @Bean
+    public ViewResolver beanNameViewResolver() {
+        System.out.println("beanNameViewResolver");
+        return new BeanNameViewResolver();
+    }
 
     @Bean
     public ViewResolver jspViewResolver() {
@@ -23,6 +29,8 @@ public class WebConfiguration {
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
+
+
 
 //    @Bean(name = "multipartResolver")
 //    public CommonsMultipartResolver multipartResolver() {

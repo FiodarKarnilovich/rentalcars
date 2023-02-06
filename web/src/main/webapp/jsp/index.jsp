@@ -18,16 +18,16 @@
     <header>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/WEB-INF/index.html">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/contacts.html">Contacts</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/WEB-INF/contacts.html">Contacts</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/rentalcars.html">Rental Cars</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/WEB-INF/rentalcars.html">Rental Cars</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Login</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/WEB-INF/login.html">Login</a>
         </li>
     </ul>
     </header>
