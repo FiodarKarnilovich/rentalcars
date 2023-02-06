@@ -10,7 +10,7 @@ import javax.servlet.*;
 import java.util.Set;
 
 @Component
-public class ServletContainerInitializerImpl implements ServletContainerInitializer {
+public class ServletContainerInitializerImpl implements ServletContainerInitializer  {
 
 
 
