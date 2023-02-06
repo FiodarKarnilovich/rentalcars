@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
     @GetMapping({"/login.html"})
-    public ModelAndView homePage() {
+    public ModelAndView loginPage() {
         System.out.println("Call loginPage");
         return new ModelAndView("login");
     }

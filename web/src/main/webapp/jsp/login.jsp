@@ -52,8 +52,4 @@
         </div>
     </div>
 </section>
-<footer style="position:absolute; left: 0; bottom: 0">
-    проект Корниловича ФФ
-</footer>
-</body>
-</html>
+<jsp:include page="_footer.jsp"/>

@@ -32,10 +32,5 @@
         </li>
     </ul>
     </header>
-    <footer style="position:absolute; left: 0; bottom: 0">
-    проект Корниловича ФФ
-    </footer>
 
-</body>
-
-</html>
+<jsp:include page="_footer.jsp"/>

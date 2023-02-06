@@ -1,8 +1,8 @@
 package servlet;
 
 
+import controllers.WebConfiguration;
 import my.config.RootConfig;
-import my.service.ServiceContextConfig;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -22,6 +22,7 @@ public class ServletContainerInitializerImpl implements ServletContainerInitiali
 
         AnnotationConfigWebApplicationContext context =
                 new AnnotationConfigWebApplicationContext();
+        context.register(WebConfiguration.class);
         context.register(RootConfig.class);
         //context.register(ServiceContextConfig.class);
 
