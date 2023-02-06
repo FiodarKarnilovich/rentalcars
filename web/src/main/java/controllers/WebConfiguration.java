@@ -9,9 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages = "controllers")
+@ComponentScan(basePackages = {"controllers"})
 @EnableWebMvc
-public class WebConfiguration extends WebMvcConfigurerAdapter {
+public class WebConfiguration {
+
+
 
     @Bean
     public ViewResolver jspViewResolver() {

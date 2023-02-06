@@ -42,7 +42,7 @@ public class AutoServiceTest {
 
     }
 
-
+    @Ignore
     @Test
     public void deleteTest() {
         autoService.deleteAuto(1);

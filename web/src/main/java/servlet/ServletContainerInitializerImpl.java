@@ -6,10 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.ServletContainerInitializer;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
 import java.util.Set;
 
 @Component
@@ -20,6 +17,7 @@ public class ServletContainerInitializerImpl implements ServletContainerInitiali
     @Override
     public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
         System.out.println("ServletContainer is running");
+
 
         AnnotationConfigWebApplicationContext context =
                 new AnnotationConfigWebApplicationContext();
@@ -38,6 +36,8 @@ public class ServletContainerInitializerImpl implements ServletContainerInitiali
         servletRegistration.addMapping("*.action");
         servletRegistration.addMapping("*.view");
         //servletRegistration.addMapping("*.jpg");
+
+
 
     }
 
