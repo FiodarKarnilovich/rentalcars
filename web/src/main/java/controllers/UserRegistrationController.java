@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserRegistrationController {
 
     @GetMapping({"/user_registration.html"})
-    public ModelAndView loginPage() {
+    public ModelAndView userRegistrationPage() {
         System.out.println("Call userRegistrationPage");
         return new ModelAndView("user_registration");
     }

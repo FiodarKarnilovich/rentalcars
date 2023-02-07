@@ -29,7 +29,9 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-primary btn-lg">Сделать заказ</button>
+<form action="${pageContext.request.contextPath}/new_order.html" method="GET">
+<button type="submit"  class="btn btn-primary btn-lg">Забронировать</button>
+</form>
 <button type="button" class="btn btn-primary btn-lg">Редактировать цену</button>
 <button type="button" class="btn btn-primary btn-lg">Удалить машину</button>
 
