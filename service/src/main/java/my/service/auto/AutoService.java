@@ -10,6 +10,7 @@ import my.service.dto.AutoForListDTO;
 import my.service.dto.FullAutoInf;
 import my.service.dto.PriceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,9 +49,17 @@ public class AutoService {
         return autoRepository.findAll();
     }
 
-    public List<AutoForListDTO> autoList(){
+    public long countAuto(){
+        return autoRepository.count();
+    }
 
-        List<Auto> autoList = listAuto();
+    public List<Auto> listAutoForPage(int pageNumber, int pageSize){
+        return autoRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
+    }
+
+    public List<AutoForListDTO> autoList(int pageNumber, int pageSize){
+
+        List<Auto> autoList = listAutoForPage(pageNumber, pageSize);
 
         List<AutoForListDTO> finalList = new ArrayList<>();
 

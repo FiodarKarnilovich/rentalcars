@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="image/jpeg" %>--%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,13 +20,13 @@
     <header>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/rentalcars/">Home</a>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/jsp/contacts.jsp">Contacts</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/rentalcars.jsp">Rental Cars</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/showlistcars/1.html">Rental Cars</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/jsp/login.jsp">Login</a>
@@ -33,6 +34,6 @@
     </ul>
     </header>
 
-    <img src="${pageContext.request.contextPath}/img/home-img.jpg" alt="тут должна быть картинка"/>
+    <img src="https://mobimg.b-cdn.net/v3/fetch/94/94c56e15f13f1de4740a76742b0b594f.jpeg?h=1200&r=0.5" alt="тут должна быть картинка"/>
     <a href="${pageContext.request.contextPath}/test_jpg.html">test jpg</a>
 <jsp:include page="_footer.jsp"/>

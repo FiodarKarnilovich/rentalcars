@@ -19,7 +19,7 @@ public class AutoViewAutoTest {
     @Test
     public void viewAutoListTest(){
 
-        System.out.println(autoService.autoList());
+        System.out.println(autoService.autoList(1,3));
     }
     @Ignore
     @Test

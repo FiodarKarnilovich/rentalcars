@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
@@ -7,44 +8,30 @@
     <tr>
         <th scope="col">Brand</th>
         <th scope="col">Model</th>
-        <th scope="col">Color</th>
         <th scope="col">Price</th>
     </tr>
     </thead>
     <tbody>
+    <c:forEach items="${listCars}" var="car">
     <tr>
-        <td>BMW</td>
-        <td>X6</td>
-        <td>red</td>
-        <td>100.0</td>
+        <td>
+        <a class="nav-link" href="${pageContext.request.contextPath}/view_car_details/${car.id}.view">
+        <c:out value="${car.brand}"/>
+        </a>
+        </td>
+        <td><c:out value="${car.model}"/></td>
+        <td><c:out value="${car.price}"/></td>
     </tr>
-    <tr>
-        <td>Mercedes</td>
-        <td>S class</td>
-        <td>black</td>
-        <td>150.0</td>
-    </tr>
+    </c:forEach>
 
     </tbody>
 </table>
 
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
+<c:forEach items="${pages}" var="page">
+        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/showlistcars/${page}.html">${page}</a></li>
+</c:forEach>
     </ul>
 </nav>
 

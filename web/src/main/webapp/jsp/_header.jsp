@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
             <a class="nav-link" href="${pageContext.request.contextPath}/jsp/contacts.jsp">Contacts</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/rentalcars.jsp">Rental Cars</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/showlistcars/1.html">Rental Cars</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/jsp/login.jsp">Login</a>
