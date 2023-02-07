@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body style="background-image: url(${pageContext.request.contextPath}/img/home-img.jpg);
+<body style="background-image: url(https://www.teahub.io/photos/full/19-198007_audi-r8-black-red.jpg);
       height: 100vh;
       background-size: cover;
       background-repeat: no-repeat;
@@ -34,6 +34,4 @@
     </ul>
     </header>
 
-    <img src="https://mobimg.b-cdn.net/v3/fetch/94/94c56e15f13f1de4740a76742b0b594f.jpeg?h=1200&r=0.5" alt="тут должна быть картинка"/>
-    <a href="${pageContext.request.contextPath}/test_jpg.html">test jpg</a>
 <jsp:include page="_footer.jsp"/>

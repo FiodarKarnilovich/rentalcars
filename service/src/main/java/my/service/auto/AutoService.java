@@ -88,7 +88,7 @@ public class AutoService {
         FullAutoInf fullAutoInf = new FullAutoInf();
 
         fullAutoInf.setId(byId.getId());
-        fullAutoInf.setPicture(byId.getAutoPicture().getPicture());
+//        fullAutoInf.setPicture(byId.getAutoPicture().getPicture());
         fullAutoInf.setBrand(byId.getAutoModel().getAutoBrand().getBrand());
         fullAutoInf.setModel(byId.getAutoModel().getModel());
         fullAutoInf.setColourAuto(byId.getColourAuto());

@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
 
-
-<img src="img/home-img.jpg)" class="rounded mx-auto d-block" alt="picture car">
+<c:set value="${car}" var="car"/>
+<%--<img src="${pageContext.request.contextPath}/image/${car.id}/photo.jpg" class="rounded mx-auto d-block" alt="picture car">--%>
 
 <table class="table">
     <thead>
@@ -17,12 +17,12 @@
     </thead>
     <tbody>
     <tr>
-        <td>BMW</td>
-        <td>X6</td>
-        <td>red</td>
-        <td>A</td>
-        <td>2020</td>
-        <td>100.0</td>
+        <td><c:out value="${car.brand}"/></td>
+        <td><c:out value="${car.model}"/></td>
+        <td><c:out value="${car.colourAuto}"/></td>
+        <td><c:out value="${car.trancemissionAuto}"/></td>
+        <td><c:out value="${car.yearAuto}"/></td>
+        <td><c:out value="${car.priceAuto}"/></td>
     </tr>
 
     </tbody>

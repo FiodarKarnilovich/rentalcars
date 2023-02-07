@@ -25,4 +25,8 @@ public class AutoPictureService {
 
         autoPictureRepository.deleteById(id);
     }
+
+    public AutoPicture getById(Integer id){
+        return autoPictureRepository.findById(id).get();
+    }
 }
