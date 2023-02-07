@@ -37,7 +37,7 @@ public class Auto implements Serializable {
     @Column(name = "year_auto")
     private Integer yearAuto;
 
-    @Column(name = "priceAuto")
+    @Column(name = "price_auto")
     private Double priceAuto;
 
     @ManyToOne

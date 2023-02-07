@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -26,9 +27,8 @@ public class AppUserRole implements Serializable {
     @Column(name = "role_name")
     private String roleName;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
-    private AppUser appUser;
+    @OneToMany(mappedBy = "appUserRole")
+    private List<AppUser> appUserList;
 
     public AppUserRole(Integer roleId, String roleName) {
         this.roleId = roleId;

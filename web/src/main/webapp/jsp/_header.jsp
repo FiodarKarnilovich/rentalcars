@@ -13,16 +13,16 @@
 <header>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/jsp/index.jsp">Home</a>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/contacts.jsp">Contacts</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/contacts.html">Contacts</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/showlistcars/1.html">Rental Cars</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/login.jsp">Login</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Login</a>
         </li>
     </ul>
 </header>

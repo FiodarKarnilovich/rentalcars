@@ -22,7 +22,8 @@ public class AppUser implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
 
-    @OneToOne(mappedBy = "appUser", cascade = CascadeType.ALL)
+    @ManyToOne//(mappedBy = "appUser", cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id")
     private AppUserRole appUserRole;
 
 
