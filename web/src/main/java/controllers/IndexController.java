@@ -7,11 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-//    @GetMapping({"/", "/index.html"})
-//    public String homePage() {
-//        System.out.println("Call home page");
-//        return "index";
-//    }
 
     @GetMapping({"/", "/index.html"})
     public ModelAndView homePage() {

@@ -40,9 +40,13 @@
 
                                     <div class="d-flex align-items-center justify-content-center pb-4">
                                         <p class="mb-0 me-2">Нет аккаунта?</p>
-                                        <button type="button" class="btn btn-outline-danger">Регистрация</button>
-                                    </div>
 
+
+                                    </div>
+<%--                                    ${pageContext.request.contextPath}/user_registration.html--%>
+                                </form>
+                                <form action="${pageContext.request.contextPath}/user_registration.html" method="GET">
+                                    <button type="submit" class="btn btn-outline-danger">Регистрация</button>
                                 </form>
 
                             </div>
