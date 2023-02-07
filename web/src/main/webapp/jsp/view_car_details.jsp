@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set value="${car}" var="car"/>
 <%--<img src="${pageContext.request.contextPath}/image/${car.id}/photo.jpg" class="rounded mx-auto d-block" alt="picture car">--%>
