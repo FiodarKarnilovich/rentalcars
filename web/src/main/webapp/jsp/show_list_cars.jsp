@@ -35,7 +35,9 @@
     </ul>
 </nav>
 
-<button type="button" class="btn btn-primary btn-lg">Добавить машину</button>
+<form action="${pageContext.request.contextPath}/new_car_registration.html" method="GET">
+    <button type="submit" class="btn btn-outline-danger">Добавить авто</button>
+</form>
 
 
 
