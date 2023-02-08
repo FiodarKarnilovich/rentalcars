@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <mime-mapping>
-        <extension>jpeg</extension>
-        <mime-type>image/jpeg</mime-type>
-    </mime-mapping>
+<!--    <mime-mapping>-->
+<!--        <extension>jpg</extension>-->
+<!--        <mime-type>image/jpg</mime-type>-->
+<!--    </mime-mapping>-->
 </web-app>

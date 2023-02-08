@@ -88,7 +88,7 @@ public class AutoService {
         FullAutoInf fullAutoInf = new FullAutoInf();
 
         fullAutoInf.setId(byId.getId());
-//        fullAutoInf.setPicture(byId.getAutoPicture().getPicture());
+        //fullAutoInf.setPicture(byId.getAutoPicture().getPicture());
         fullAutoInf.setBrand(byId.getAutoModel().getAutoBrand().getBrand());
         fullAutoInf.setModel(byId.getAutoModel().getModel());
         fullAutoInf.setColourAuto(byId.getColourAuto());
@@ -99,7 +99,7 @@ public class AutoService {
         return fullAutoInf;
     }
 
-    public void addNewCar(AddAutoDTO addAutoDTO) {
+    public void addNewCar(AddAutoDTO addAutoDTO, byte[] autoPicture) {
 
         String autoBrand = addAutoDTO.getAutoBrand();
 
@@ -129,8 +129,8 @@ public class AutoService {
 
         Auto auto1 = addAuto(auto);
 
-        AutoPicture autoPicture = new AutoPicture(null, addAutoDTO.getAutoPicture(), auto1);
-        autoPictureService.addAutoPicture(autoPicture);
+        AutoPicture autoPhoto = new AutoPicture(null, autoPicture, auto1);
+        autoPictureService.addAutoPicture(autoPhoto);
 
     }
 

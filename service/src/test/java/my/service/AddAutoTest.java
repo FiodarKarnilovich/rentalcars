@@ -20,7 +20,7 @@ public class AddAutoTest {
     @Ignore
     @Test
     public void addAutoFromDTO(){
-        AddAutoDTO dto = new AddAutoDTO("BMW", "X6", "yellow", "A", 2020, 300.0, new byte[10]);
-        autoService.addNewCar(dto);
+//        AddAutoDTO dto = new AddAutoDTO("BMW", "X6", "yellow", "A", 2020, 300.0, new byte[10]);
+//        autoService.addNewCar(dto);
     }
 }

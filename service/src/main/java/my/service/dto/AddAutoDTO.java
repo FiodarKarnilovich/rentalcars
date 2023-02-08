@@ -25,7 +25,7 @@ public class AddAutoDTO {
 
     private Double priceAuto;
 
-    private byte[] autoPicture;
+//    private byte[] autoPicture;
 
 
 

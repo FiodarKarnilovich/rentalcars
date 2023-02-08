@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%@ page contentType="image/jpg"%>
 <jsp:include page="_header.jsp"/>
 
 <table class="table">
@@ -15,7 +16,7 @@
     <c:forEach items="${listCars}" var="car">
     <tr>
         <td>
-        <a class="nav-link" href="${pageContext.request.contextPath}/view_car_details/${car.id}.view">
+        <a class="nav-link" href="${pageContext.request.contextPath}/view_car_details/${car.id}.html">
         <c:out value="${car.brand}"/>
         </a>
         </td>

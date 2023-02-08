@@ -4,9 +4,14 @@ import entity.app_users.AppUser;
 import entity.app_users.AppUserRole;
 import my.repository.AppUserRepository;
 import my.service.dto.AppUserRegistrationDTO;
+import my.service.dto.UserForListDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -18,6 +23,13 @@ public class AppUserService {
     @Autowired
     private AppUserRoleService appUserRoleService;
 
+    public long countUsers(){
+        return appUserRepository.count();
+    }
+
+    public List<AppUser> listUserForPage(int pageNumber, int pageSize){
+        return appUserRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
+    }
 
     public AppUser addAppUser(AppUser appUser) {
 
@@ -31,6 +43,11 @@ public class AppUserService {
 
     public AppUser findByEmail(String email){
         return appUserRepository.findAppUserByEmail(email);
+    }
+
+    public List<AppUser> listUsers() {
+
+        return appUserRepository.findAll();
     }
 
     public void addNewUser(AppUserRegistrationDTO appUserRegistrationDTO) {
@@ -50,5 +67,26 @@ public class AppUserService {
         appUser.setPhoneNumber(appUserRegistrationDTO.getPhoneNumber());
         appUser.setAppUserRole(role);
         addAppUser(appUser);
+    }
+
+    public List<UserForListDTO> userList(int pageNumber, int pageSize){
+
+        List<AppUser> userList = listUserForPage(pageNumber, pageSize);
+
+        List<UserForListDTO> finalListUser = new ArrayList<>();
+
+        for (AppUser appUser : userList) {
+            UserForListDTO userForListDTO = new UserForListDTO();
+            userForListDTO.setId(appUser.getUserId());
+            userForListDTO.setName(appUser.getFirstName());
+            userForListDTO.setLastName(appUser.getLastName());
+            userForListDTO.setPhone(appUser.getPhoneNumber());
+            userForListDTO.setRole(appUser.getAppUserRole().getRoleName());
+
+            finalListUser.add(userForListDTO);
+        }
+
+        return finalListUser;
+
     }
 }

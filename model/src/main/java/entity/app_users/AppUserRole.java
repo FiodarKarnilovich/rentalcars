@@ -28,7 +28,7 @@ public class AppUserRole implements Serializable {
     private String roleName;
 
     @OneToMany(mappedBy = "appUserRole")
-    private List<AppUser> appUserList;
+    private List<AppUser> appUsers;
 
     public AppUserRole(Integer roleId, String roleName) {
         this.roleId = roleId;

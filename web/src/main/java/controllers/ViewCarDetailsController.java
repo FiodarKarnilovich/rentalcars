@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -18,7 +19,7 @@ public class ViewCarDetailsController {
     @Autowired
     private AutoPictureService autoPictureService;
 
-    @GetMapping("/view_car_details/{car.id}.view")
+    @GetMapping("/view_car_details/{car.id}.html")
     public ModelAndView viewCarDetails(@PathVariable("car.id") Integer id){
         return new ModelAndView(
                 "view_car_details",
@@ -26,10 +27,10 @@ public class ViewCarDetailsController {
         );
     }
 
-//    @ResponseBody
-//    @GetMapping("/image/{car.id}/photo.jpg")
-//    public byte[] getImage(@PathVariable("car.id") Integer carId) {
-//        System.out.println("Call getImage: " + carId);
-//        return autoPictureService.getById(carId).getPicture();
-//    }
+    @ResponseBody
+    @GetMapping("/image/{car.id}/photo.jpg")
+    public byte[] getImage(@PathVariable("car.id") Integer carId) {
+        System.out.println("Call getImage: " + carId);
+        return autoPictureService.getById(carId).getPicture();
+    }
 }
