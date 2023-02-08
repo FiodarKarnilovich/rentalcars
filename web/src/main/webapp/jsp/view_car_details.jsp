@@ -32,7 +32,11 @@
 <form action="${pageContext.request.contextPath}/new_order.html" method="GET">
 <button type="submit"  class="btn btn-primary btn-lg">Забронировать</button>
 </form>
+<a class="nav-link" href="${pageContext.request.contextPath}/change_price/${car.id}.html">
 <button type="button" class="btn btn-primary btn-lg">Редактировать цену</button>
+</a>
+<a class="nav-link" href="${pageContext.request.contextPath}/delete_car/${car.id}.html">
 <button type="button" class="btn btn-primary btn-lg">Удалить машину</button>
+</a>
 
 <jsp:include page="_footer.jsp"/>

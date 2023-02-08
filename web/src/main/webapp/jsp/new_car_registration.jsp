@@ -1,4 +1,4 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
 
 <h1> Введите данные новой машины </h1>
@@ -26,6 +26,13 @@
         <label for="colourAuto" class="form-label">Цвет</label>
         <input type="text" name="colourAuto" class="form-control" id="colourAuto" aria-describedby="nameHelp">
         <div class="form-text">Введите цвет авто</div>
+    </div>
+
+    <!-- трансмиссия -->
+    <div class="mb-3">
+        <label for="trancemissionAuto" class="form-label">Трансмиссия</label>
+        <input type="text" name="trancemissionAuto" class="form-control" id="trancemissionAuto" aria-describedby="nameHelp">
+        <div class="form-text">Введите трансмиссию</div>
     </div>
     <!-- год авто -->
     <div class="mb-3">
