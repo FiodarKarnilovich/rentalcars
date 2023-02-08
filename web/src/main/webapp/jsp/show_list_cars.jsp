@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%@ page contentType="image/jpg"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="image/jpg"%>--%>
 <jsp:include page="_header.jsp"/>
 
 <table class="table">
