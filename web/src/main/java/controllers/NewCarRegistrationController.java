@@ -31,9 +31,8 @@ public class NewCarRegistrationController {
     @PostMapping("/new_car_registration.html")
     @SneakyThrows
     public String addCar(@RequestParam("autoPicture") MultipartFile file, AddAutoDTO addAutoDTO) {
-//        System.out.println("Call new auto: " + auto);
-//        System.out.println(file.getOriginalFilename() + ": " + file.getSize());
-        autoService.addNewCar(addAutoDTO, file.getBytes()); // еще надо добавить как то фото
-        return "redirect:/showlistcars/1.html";
+
+        autoService.addNewCar(addAutoDTO, file.getBytes());
+        return "redirect:/show_list_cars/1.html";
     }
 }

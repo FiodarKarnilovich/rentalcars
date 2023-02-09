@@ -106,7 +106,7 @@ public class AutoService {
         AutoBrand brand = autoBrandService.findByNameBrand(autoBrand);
 
         if (brand == null) {
-            AutoBrand autoBrand1 = new AutoBrand(null, autoBrand);
+            AutoBrand autoBrand1 = new AutoBrand(null, autoBrand.toUpperCase());
             brand = autoBrandService.addAutoBrand(autoBrand1);
         }
 
@@ -115,15 +115,15 @@ public class AutoService {
         AutoModel model = autoModelService.findByNameModel(autoModel);
 
         if (model == null) {
-            AutoModel autoModel1 = new AutoModel(null, autoModel, brand);
+            AutoModel autoModel1 = new AutoModel(null, autoModel.toUpperCase(), brand);
             model = autoModelService.addAutoModel(autoModel1);
         }
 
         Auto auto = new Auto();
 
         auto.setAutoModel(model);
-        auto.setColourAuto(addAutoDTO.getColourAuto());
-        auto.setTrancemissionAuto(addAutoDTO.getTrancemissionAuto());
+        auto.setColourAuto(addAutoDTO.getColourAuto().toLowerCase());
+        auto.setTrancemissionAuto(addAutoDTO.getTrancemissionAuto().toUpperCase());
         auto.setYearAuto(addAutoDTO.getYearAuto());
         auto.setPriceAuto(addAutoDTO.getPriceAuto());
 
@@ -138,6 +138,14 @@ public class AutoService {
         Auto auto = findById(id);
         auto.setPriceAuto(price.getPrice());
         addAuto(auto);
+    }
+
+    public PriceDTO priceForChange(Integer id){
+        Auto auto = findById(id);
+        PriceDTO priceDTO = new PriceDTO();
+        priceDTO.setId(auto.getId());
+        priceDTO.setPrice(auto.getPriceAuto());
+        return priceDTO;
     }
 
 }

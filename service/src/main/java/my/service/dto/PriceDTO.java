@@ -11,5 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PriceDTO {
 
+    Integer id;
     Double price;
 }

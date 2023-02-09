@@ -3,7 +3,8 @@
 
 <h2>Ведите новую цену на авто</h2>
 
-<form style="width: 50% ; margin-left: 10%" action="${pageContext.request.contextPath}/change_price/${car.id}.html" enctype="multipart/form-data">
+<form style="width: 50% ; margin-left: 10%" method="post"
+      action="${pageContext.request.contextPath}/change_price/${car.id}.html" >
 <div class="mb-3">
     <label for="price" class="form-label">Цена</label>
     <input type="text" name="price" class="form-control" id="price" aria-describedby="nameHelp">

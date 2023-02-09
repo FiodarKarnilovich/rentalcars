@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set value="${car}" var="car"/>
-<img src="${pageContext.request.contextPath}/image/${car.id}/photo.jpg" class="rounded mx-auto d-block" alt="picture car" datatype="image/jpg">
+<img width="800" src="${pageContext.request.contextPath}/image/${car.id}/photo.jpg" class="rounded mx-auto d-block" alt="picture car" datatype="image/jpg">
 
 <table class="table">
     <thead>
