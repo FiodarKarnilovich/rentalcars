@@ -41,6 +41,10 @@ public class AppUserService {
         appUserRepository.deleteById(id);
     }
 
+    public AppUser findById(Integer id){
+        return appUserRepository.findById(id).get();
+    }
+
     public AppUser findByEmail(String email){
         return appUserRepository.findAppUserByEmail(email);
     }

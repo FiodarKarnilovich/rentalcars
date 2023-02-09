@@ -29,7 +29,7 @@
     </tbody>
 </table>
 
-<form action="${pageContext.request.contextPath}/new_order.html" method="GET">
+<form action="${pageContext.request.contextPath}/new_order/${car.id}.html" method="GET">
 <button type="submit"  class="btn btn-primary btn-lg">Забронировать</button>
 </form>
 <a class="nav-link" href="${pageContext.request.contextPath}/change_price/${car.id}.html">

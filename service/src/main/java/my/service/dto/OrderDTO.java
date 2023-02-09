@@ -13,9 +13,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class OrderDTO {
 
-    private LocalDate dateStart;
+    private Integer carId;
 
-    private LocalDate dateFinish;
+    //private LocalDate dateStart;
+
+    //private LocalDate dateFinish;
 
     private Integer amountOfDays;
 }

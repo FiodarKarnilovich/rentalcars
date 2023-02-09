@@ -1,8 +1,10 @@
 package security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-@ComponentScan(basePackages = "java")
+@ComponentScan(basePackages = {"security", "controllers", "servlet", "my.service", "entity"})
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -18,7 +20,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/index.html").permitAll()
@@ -26,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/new_car_registration*").hasRole("ADMIN")
                 .antMatchers("/change_price_auto*").hasRole("ADMIN")
                 .and()
+                .csrf().disable()
                 .formLogin()
                 .loginPage("/login.html")
                 .loginProcessingUrl("/login")
@@ -34,8 +36,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .deleteCookies("JSESSIONID");
+
     }
 
+    @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth,
                                         @Qualifier("authService") AuthenticationService service) throws Exception {
         auth.userDetailsService(service);

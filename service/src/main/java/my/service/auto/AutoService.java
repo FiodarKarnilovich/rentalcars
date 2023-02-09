@@ -76,6 +76,7 @@ public class AutoService {
         return finalList;
 
     }
+
     public Auto findById(Integer id) {
 
         return autoRepository.findById(id).get();

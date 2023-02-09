@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ page contentType="image/jpg"%>--%>
@@ -36,9 +37,13 @@
     </ul>
 </nav>
 
+<security:authorize access="hasRole('ROLE_ADMIN')">
 <form action="${pageContext.request.contextPath}/new_car_registration.html" method="GET">
     <button type="submit" class="btn btn-outline-danger">Добавить авто</button>
 </form>
+</security:authorize>
+
+
 
 
 
