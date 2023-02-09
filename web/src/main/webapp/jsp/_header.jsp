@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%--<jsp:directive.page contentType="text/html; charset=UTF-8" />--%>
 <head>
     <meta charset="utf-8">
@@ -23,6 +24,11 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Login</a>
+        </li>
+        <li class="nav-item">
+            <security:authorize access="isAuthenticated()">
+                <a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a>
+            </security:authorize>
         </li>
     </ul>
 </header>

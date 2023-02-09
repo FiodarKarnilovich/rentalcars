@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <jsp:include page="_header.jsp"/>
 
 <form style="width: 50% ; margin-left: 10%" method="post" action="${pageContext.request.contextPath}/user_registration.html">
