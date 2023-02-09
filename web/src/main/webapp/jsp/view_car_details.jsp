@@ -30,14 +30,23 @@
     </tbody>
 </table>
 
-<form action="${pageContext.request.contextPath}/new_order/${car.id}.html" method="GET">
-<button type="submit"  class="btn btn-primary btn-lg">Забронировать</button>
-</form>
+<security:authorize access="isAuthenticated()">
+<a class="nav-link" href="${pageContext.request.contextPath}/new_order/${car.id}.html">
+<button type="button"  class="btn btn-primary btn-lg">Забронировать</button>
+</a>
+</security:authorize>
+
+<security:authorize access="hasRole('ROLE_ADMIN')">
 <a class="nav-link" href="${pageContext.request.contextPath}/change_price/${car.id}.html">
 <button type="button" class="btn btn-primary btn-lg">Редактировать цену</button>
 </a>
+</security:authorize>
+
+<security:authorize access="hasRole('ROLE_ADMIN')">
 <a class="nav-link" href="${pageContext.request.contextPath}/delete_car/${car.id}.html">
 <button type="button" class="btn btn-primary btn-lg">Удалить машину</button>
 </a>
+</security:authorize>
+
 
 <jsp:include page="_footer.jsp"/>
