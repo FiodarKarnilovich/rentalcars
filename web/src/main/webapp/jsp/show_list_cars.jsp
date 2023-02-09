@@ -43,6 +43,18 @@
 </form>
 </security:authorize>
 
+<br>
+<security:authorize access="hasRole('ROLE_ADMIN')">
+    <form action="${pageContext.request.contextPath}/show_list_order.html" method="GET">
+        <button type="submit" class="btn btn-outline-danger">Заказы</button>
+    </form>
+</security:authorize>
+<br>
+<security:authorize access="hasRole('ROLE_ADMIN')">
+    <form action="${pageContext.request.contextPath}/showlistusers/1.html" method="GET">
+        <button type="submit" class="btn btn-outline-danger">Пользователи</button>
+    </form>
+</security:authorize>
 
 
 
