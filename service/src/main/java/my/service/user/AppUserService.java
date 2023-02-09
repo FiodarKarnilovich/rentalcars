@@ -60,7 +60,7 @@ public class AppUserService {
         }
 
         appUser.setEmail(appUserRegistrationDTO.getEmail());
-        appUser.setPassword(appUserRegistrationDTO.getPassword());
+        appUser.setPassword("{noop}"+appUserRegistrationDTO.getPassword());
         appUser.setFirstName(appUserRegistrationDTO.getFirstName());
         appUser.setLastName(appUserRegistrationDTO.getLastName());
         appUser.setBirthDay(appUserRegistrationDTO.getBirthDay());
