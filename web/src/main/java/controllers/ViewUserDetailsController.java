@@ -17,7 +17,7 @@ public class ViewUserDetailsController {
 
     @GetMapping("/view_user_details/{user.id}.html")
     public ModelAndView showUserPage(@PathVariable("user.id") Integer id){
-        return new ModelAndView("view_user_detail",
+        return new ModelAndView("view_user_details",
                 Map.of("user", appUserService.findById(id))
         );
     }
