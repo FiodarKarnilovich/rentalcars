@@ -12,31 +12,33 @@
                             <div class="card-body p-md-5 mx-md-4">
 
 
-                                <form>
+                                <form name='f' action="${pageContext.request.contextPath}/login" method='POST'>
                                     <p>Войдите в аккаунт</p>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example11" class="form-control"
+                                        <input type="text" name="username" id="username" class="form-control"
                                                placeholder="Введите email" />
-                                        <label class="form-label" for="form2Example11">Username</label>
+                                        <label class="form-label" for="username">Email</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example22" class="form-control" />
-                                        <label class="form-label" for="form2Example22">Password</label>
+                                        <input type="password" name="password" id="password" class="form-control" />
+                                        <label class="form-label" for="password">Password</label>
                                     </div>
 
-
-                                    <div class="d-flex align-items-center justify-content-center pb-4">
-                                        <p class="mb-0 me-2">Нет аккаунта?</p>
-
-
+                                    <div class="mt-4 pt-2">
+                                        <input class="btn btn-primary btn-lg" type="submit" value="LogIn" />
                                     </div>
 <%--                                    ${pageContext.request.contextPath}/user_registration.html--%>
                                 </form>
-                                <form action="${pageContext.request.contextPath}/user_registration.html" method="GET">
-                                    <button type="submit" class="btn btn-outline-danger">Регистрация</button>
-                                </form>
+
+                                <div class="d-flex align-items-center justify-content-center pb-4">
+                                    <p class="mb-0 me-2">Нет аккаунта?</p>
+                                </div>
+
+                                <a href="${pageContext.request.contextPath}/user_registration.html">
+                                    <button class="btn btn-outline-danger">Регистрация</button>
+                                </a>
 
                             </div>
                         </div>

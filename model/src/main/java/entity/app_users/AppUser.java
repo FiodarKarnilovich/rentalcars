@@ -45,13 +45,14 @@ public class AppUser implements Serializable {
 
     @Override
     public String toString() {
-        return "UserDetails{" +
+        return "AppUser{" +
                 "userId=" + userId +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDay='" + birthDay + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-
                 '}';
     }
 

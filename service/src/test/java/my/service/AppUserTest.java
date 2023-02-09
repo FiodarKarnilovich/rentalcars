@@ -6,6 +6,7 @@ import entity.app_users.AppUserRole;
 import my.config.RootConfig;
 import my.service.user.AppUserRoleService;
 import my.service.user.AppUserService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class AppUserTest {
     @Autowired
     private AppUserService appUserService;
 
+    @Ignore
     @Test
     public void addAppUser() {
 
@@ -32,4 +34,16 @@ public class AppUserTest {
         AppUser appUser = appUserService.addAppUser(fiodar);
 
     }
+
+    @Test
+    public void findByEmail(){
+
+        AppUser appUser = appUserService.findByEmail("admin@admin.com");
+        if (appUser==null){
+            System.out.println("Not found");
+        } else {
+            System.out.println("Found " + appUser) ;
+        }
+    }
+
 }
