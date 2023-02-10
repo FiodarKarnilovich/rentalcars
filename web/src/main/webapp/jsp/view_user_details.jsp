@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%--<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>--%>
 <jsp:include page="_header.jsp"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -31,11 +31,11 @@
     </tbody>
 </table>
 
-<%--<security:authorize access="hasRole('ROLE_ADMIN')">--%>
-<%--    <a class="nav-link" href="${pageContext.request.contextPath}/change_role_user/${app_User.id}.html">--%>
-<%--        <button type="button"  class="btn btn-primary btn-lg">Сменить роль</button>--%>
-<%--    </a>--%>
-<%--</security:authorize>--%>
+<security:authorize access="hasRole('ROLE_ADMIN')">
+    <a class="nav-link" href="${pageContext.request.contextPath}/change_role_user/${user.userId}.html">
+        <button type="button"  class="btn btn-primary btn-lg">Сменить роль</button>
+    </a>
+</security:authorize>
 
 
 

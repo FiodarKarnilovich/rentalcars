@@ -32,6 +32,11 @@ public class OrderService {
         return carOrderRepository.findAll();
     }
 
+    public void deleteOrder(Integer id){
+        carOrderRepository.deleteById(id);
+    }
+
+
     public CarOrder getOrder(Integer id){
         return carOrderRepository.findById(id).get();
     }

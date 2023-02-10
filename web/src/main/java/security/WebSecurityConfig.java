@@ -29,6 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/change_role_user*").hasRole("ADMIN")
                 .antMatchers("/change_price_auto*").hasRole("ADMIN")
                 .antMatchers("/view_user_details*").hasRole("ADMIN")
+                .antMatchers("/view_order_details*").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
                 .formLogin()

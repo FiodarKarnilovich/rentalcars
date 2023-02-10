@@ -20,10 +20,11 @@ public class AppUserRoleService {
         return appUserRoleRepository.save(appUserRole);
     }
 
-    public void deleteAutoBrand(Integer id) {
+    public void deleteRole(Integer id) {
 
         appUserRoleRepository.deleteById(id);
     }
+
 
     public AppUserRole getByName(String name) {
         return appUserRoleRepository.findAppUserRoleByRoleName(name);

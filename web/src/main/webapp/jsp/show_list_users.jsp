@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%--<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
 
@@ -38,10 +38,11 @@
     </ul>
 </nav>
 
-
-<form action="${pageContext.request.contextPath}/new_user_registration.html" method="GET">
-    <button type="submit" class="btn btn-outline-danger">Добавить пользователя</button>
-</form>
+<security:authorize access="hasRole('ROLE_ADMIN')">
+<a class="nav-link" href="${pageContext.request.contextPath}/user_registration.html">
+    <button type="button" class="btn btn-outline-danger">Добавить пользователя</button>
+</a>
+</security:authorize>
 
 
 <jsp:include page="_footer.jsp"/>
