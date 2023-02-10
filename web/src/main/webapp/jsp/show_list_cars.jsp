@@ -39,20 +39,20 @@
 
 <security:authorize access="hasRole('ROLE_ADMIN')">
 <a class="nav-link" href="${pageContext.request.contextPath}/new_car_registration.html">
-    <button type="submit" class="btn btn-outline-danger">Добавить авто</button>
+    <button type="submit" class="btn btn-primary btn-lg">Добавить авто</button>
 </a>
 </security:authorize>
 
 <br>
 <security:authorize access="hasRole('ROLE_ADMIN')">
     <a class="nav-link" href="${pageContext.request.contextPath}/show_list_order.html">
-        <button type="submit" class="btn btn-outline-danger">Заказы</button>
+        <button type="submit" class="btn btn-primary btn-lg">Заказы</button>
     </a>
 </security:authorize>
 <br>
 <security:authorize access="hasRole('ROLE_ADMIN')">
     <a class="nav-link" href="${pageContext.request.contextPath}/showlistusers/1.html">
-        <button type="submit" class="btn btn-outline-danger">Пользователи</button>
+        <button type="submit" class="btn btn-primary btn-lg">Пользователи</button>
     </a>
 </security:authorize>
 

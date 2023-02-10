@@ -36,11 +36,15 @@
 </a>
 </security:authorize>
 
+<br>
+
 <security:authorize access="hasRole('ROLE_ADMIN')">
 <a class="nav-link" href="${pageContext.request.contextPath}/change_price/${car.id}.html">
 <button type="button" class="btn btn-primary btn-lg">Редактировать цену</button>
 </a>
 </security:authorize>
+
+<br>
 
 <security:authorize access="hasRole('ROLE_ADMIN')">
 <a class="nav-link" href="${pageContext.request.contextPath}/delete_car/${car.id}.html">
@@ -48,5 +52,6 @@
 </a>
 </security:authorize>
 
+<br>
 
 <jsp:include page="_footer.jsp"/>
