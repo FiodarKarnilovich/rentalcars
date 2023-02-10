@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class AppUserRoleService {
@@ -25,6 +27,9 @@ public class AppUserRoleService {
         appUserRoleRepository.deleteById(id);
     }
 
+    public List<AppUserRole> allRoles(){
+        return appUserRoleRepository.findAll();
+    }
 
     public AppUserRole getByName(String name) {
         return appUserRoleRepository.findAppUserRoleByRoleName(name);

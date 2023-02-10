@@ -22,9 +22,9 @@
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/showlistcars/1.html">Rental Cars</a>
         </li>
-        <li class="nav-item">
+        <security:authorize access="!isAuthenticated()">
             <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Login</a>
-        </li>
+        </security:authorize>
         <li class="nav-item">
             <security:authorize access="isAuthenticated()">
                 <a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a>

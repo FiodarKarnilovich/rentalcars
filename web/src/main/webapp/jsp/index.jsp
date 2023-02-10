@@ -31,7 +31,9 @@
             <a class="nav-link" href="${pageContext.request.contextPath}/showlistcars/1.html">Rental Cars</a>
         </li>
         <li class="nav-item">
+<security:authorize access="!isAuthenticated()">
             <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Login</a>
+</security:authorize>
         </li>
         <li class="nav-item">
         <security:authorize access="isAuthenticated()">

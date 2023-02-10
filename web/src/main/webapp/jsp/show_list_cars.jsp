@@ -38,20 +38,20 @@
 </nav>
 
 <security:authorize access="hasRole('ROLE_ADMIN')">
-<<a class="nav-link" href="${pageContext.request.contextPath}/new_car_registration.html">
+<a class="nav-link" href="${pageContext.request.contextPath}/new_car_registration.html">
     <button type="submit" class="btn btn-outline-danger">Добавить авто</button>
 </a>
 </security:authorize>
 
 <br>
 <security:authorize access="hasRole('ROLE_ADMIN')">
-    <<a class="nav-link" href="${pageContext.request.contextPath}/show_list_order.html">
+    <a class="nav-link" href="${pageContext.request.contextPath}/show_list_order.html">
         <button type="submit" class="btn btn-outline-danger">Заказы</button>
     </a>
 </security:authorize>
 <br>
 <security:authorize access="hasRole('ROLE_ADMIN')">
-    <<a class="nav-link" href="${pageContext.request.contextPath}/showlistusers/1.html">
+    <a class="nav-link" href="${pageContext.request.contextPath}/showlistusers/1.html">
         <button type="submit" class="btn btn-outline-danger">Пользователи</button>
     </a>
 </security:authorize>

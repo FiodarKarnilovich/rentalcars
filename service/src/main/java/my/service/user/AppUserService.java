@@ -4,6 +4,7 @@ import entity.app_users.AppUser;
 import entity.app_users.AppUserRole;
 import my.repository.AppUserRepository;
 import my.service.dto.AppUserRegistrationDTO;
+import my.service.dto.RoleDTO;
 import my.service.dto.UserForListDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -92,5 +93,12 @@ public class AppUserService {
 
         return finalListUser;
 
+    }
+
+    public void changeRole(Integer id, RoleDTO roleDTO){
+        AppUser user = findById(id);
+        AppUserRole role = appUserRoleService.getByName(roleDTO.getRoleName());
+        user.setAppUserRole(role);
+        addAppUser(user);
     }
 }
