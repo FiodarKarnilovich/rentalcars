@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <jsp:include page="_header.jsp"/>
 
 
@@ -30,7 +32,7 @@
 </table>
 
 <security:authorize access="hasRole('ROLE_ADMIN')">
-    <a class="nav-link" href="${pageContext.request.contextPath}/delete_car/${car.id}.html">
+    <a class="nav-link" href="${pageContext.request.contextPath}/delete_order/${order.orderId}.html">
         <button type="button" class="btn btn-primary btn-lg">Удалить ордер</button>
     </a>
 </security:authorize>

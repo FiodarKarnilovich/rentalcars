@@ -6,6 +6,7 @@ import my.service.dto.RoleDTO;
 import my.service.user.AppUserRoleService;
 import my.service.user.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,12 +23,14 @@ public class ChangeRoleController {
     @Autowired
     private AppUserService appUserService;
 
+    @Secured({"ROLE_ADMIN"})
     @PostMapping("/change_role_user/{user.userId}.html")
     public String updateRolePost(@PathVariable("user.userId") Integer id, RoleDTO roleDTO){
         appUserService.changeRole(id, roleDTO);
         return "redirect:/view_user_details/"+id+".html";
     }
 
+    @Secured({"ROLE_ADMIN"})
     @GetMapping("/change_role_user/{user.userId}.html")
     public ModelAndView updateRoleGet(@PathVariable("user.userId") Integer id){
         return new ModelAndView("change_role_user",

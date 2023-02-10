@@ -5,6 +5,7 @@ import lombok.SneakyThrows;
 import my.service.auto.AutoService;
 import my.service.dto.AddAutoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,7 @@ public class NewCarRegistrationController {
     @Autowired
     private AutoService autoService;
 
+    @Secured({"ROLE_ADMIN"})
     @GetMapping("/new_car_registration.html")
     public ModelAndView newCarRegistrationPage() {
 
@@ -28,6 +30,7 @@ public class NewCarRegistrationController {
         return new ModelAndView("new_car_registration");
     }
 
+    @Secured({"ROLE_ADMIN"})
     @PostMapping("/new_car_registration.html")
     @SneakyThrows
     public String addCar(@RequestParam("autoPicture") MultipartFile file, AddAutoDTO addAutoDTO) {

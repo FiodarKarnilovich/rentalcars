@@ -2,6 +2,7 @@ package controllers;
 
 import my.service.auto.AutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ public class DeleteCarController {
     @Autowired
     private AutoService autoService;
 
+    @Secured({"ROLE_ADMIN"})
     @GetMapping("/delete_car/{car.id}.html")
     public String deleteCar(@PathVariable("car.id") Integer id){
         autoService.deleteAuto(id);
